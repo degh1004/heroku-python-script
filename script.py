@@ -3,7 +3,7 @@ import os
 from telegram.client import Telegram, AuthorizationState
 import settings
 
-code = '85962'
+code = 85962
 
 tg = Telegram(
     api_id=settings.API_ID,
