@@ -8,7 +8,7 @@ tg = Telegram(
     api_hash=settings.API_HASH,
     phone=settings.PHONE_NUMBER,
     database_encryption_key='changeme1234',
-    library_path='./libfile/libtdjson.dylib'
+    # library_path='./libfile/libtdjson.dylib'
 )
 
 tg.login()
