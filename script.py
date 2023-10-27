@@ -3,8 +3,6 @@ import os
 from telegram.client import Telegram, AuthorizationState
 import settings
 
-code = input("Please insert pin code here: ")
-
 tg = Telegram(
     api_id=settings.API_ID,
     api_hash=settings.API_HASH,
@@ -17,6 +15,7 @@ state = tg.login(blocking=False)
 
 if state == AuthorizationState.WAIT_CODE:
     # Telegram expects a pin code
+    code = input("Please insert pin code here: ")
     tg.send_code(code)
     state = tg.login(blocking=False)  # continue the login process
 
