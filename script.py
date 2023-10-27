@@ -11,7 +11,16 @@ tg = Telegram(
     # library_path='./libfile/libtdjson.dylib'
 )
 
-tg.login()
+state = tg.login(blocking=False)
+
+if state == AuthorizationState.WAIT_CODE:
+    # Telegram expects a pin code
+    tg.send_code(code)
+    state = tg.login(blocking=False)  # continue the login process
+
+if state == AuthorizationState.WAIT_PASSWORD:
+    tg.send_password(password)
+    state = tg.login(blocking=False)
 
 
 def new_message_handler(update):
