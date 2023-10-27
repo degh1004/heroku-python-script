@@ -1,6 +1,6 @@
 import os
 
-from telegram.client import Telegram
+from telegram.client import Telegram, AuthorizationState
 import settings
 
 tg = Telegram(
