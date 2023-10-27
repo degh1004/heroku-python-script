@@ -3,7 +3,7 @@ import os
 from telegram.client import Telegram, AuthorizationState
 import settings
 
-code = 85962
+code = input("Please insert pin code here: ")
 
 tg = Telegram(
     api_id=settings.API_ID,
